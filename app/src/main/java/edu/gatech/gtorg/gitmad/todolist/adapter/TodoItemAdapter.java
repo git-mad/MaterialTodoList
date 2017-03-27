@@ -47,7 +47,8 @@ public class TodoItemAdapter extends RecyclerView.Adapter<TodoItemAdapter.TodoIt
 
                 notifyDataSetChanged();
 
-                Snackbar snackbar = Snackbar.make((View) v.getParent().getParent(), "Todo Completed!", BaseTransientBottomBar.LENGTH_LONG);
+                // TODO: 12. Fill in the Snackbar code
+                Snackbar snackbar = Snackbar.make((View) v.getParent().getParent(), /*...*/);
                 snackbar.setAction("Undo", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -58,7 +59,7 @@ public class TodoItemAdapter extends RecyclerView.Adapter<TodoItemAdapter.TodoIt
                         notifyDataSetChanged();
                     }
                 });
-                snackbar.show();
+                /* ... */
             }
         });
     }

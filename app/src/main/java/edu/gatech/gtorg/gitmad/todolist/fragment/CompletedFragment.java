@@ -40,14 +40,9 @@ public class CompletedFragment extends Fragment {
         final TodoItemAdapter adapter = new TodoItemAdapter(TodoItemsProvider.getCompletedItems());
         recyclerView.setAdapter(adapter);
 
-        final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                adapter.setItems(TodoItemsProvider.getCompletedItems());
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        });
+        // TODO: 11. Setup the SwipeRefreshLayout
+        // The following should be performed when refreshing:
+        // adapter.setItems(TodoItemsProvider.getCompletedItems());
 
         return view;
     }

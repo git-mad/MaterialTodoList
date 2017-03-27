@@ -46,48 +46,20 @@ public class PendingFragment extends Fragment {
         final TodoItemAdapter adapter = new TodoItemAdapter(TodoItemsProvider.getPendingItems());
         recyclerView.setAdapter(adapter);
 
-        final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_layout);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                adapter.setItems(TodoItemsProvider.getPendingItems());
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        });
+        // TODO: 5. Setup the SwipeRefreshLayout
+        // The following should be performed when refreshing:
+        // adapter.setItems(TodoItemsProvider.getPendingItems());
 
-        final FloatingActionButton floatingActionButton = (FloatingActionButton) view.findViewById(R.id.fab);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog dialog = createDialog(adapter);
-                dialog.show();
-            }
-        });
+        // TODO: 7. Setup the FloatingActionButton and show the dialog when clicked
 
         return view;
     }
 
     public AlertDialog createDialog(final TodoItemAdapter adapter) {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        final LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.add_item_dialog, null);
-        builder.setMessage("Add a New Todo");
-        builder.setView(view);
-        final EditText editText = (EditText) view.findViewById(R.id.edit_text);
-        builder.setPositiveButton("ADD", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                TodoItemsProvider.addItem(new TodoItem(editText.getText().toString(), false));
-                adapter.setItems(TodoItemsProvider.getPendingItems());
-            }
-        })
-                .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        return builder.create();
+        // TODO: 9. Create the dialog
+        // The following should be performed when the user clicks to confirm:
+        // TodoItemsProvider.addItem(new TodoItem(editText.getText().toString(), false));
+        // adapter.setItems(TodoItemsProvider.getPendingItems());
     }
 
     @Override

@@ -4,15 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Todo" />
-
-    </android.support.design.widget.TextInputLayout>
+    <!-- TODO: 8. Create layout for dialog-->
+    <!--Use the TextInputLayout with TextInputEditText-->
 </LinearLayout>
